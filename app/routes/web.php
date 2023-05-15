@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/cars', App\Http\Actions\Car\IndexAction::class)->name('cars.index');
+Route::get('/cars/{car}', App\Http\Actions\Car\ShowAction::class)->name('cars.show'); //追加

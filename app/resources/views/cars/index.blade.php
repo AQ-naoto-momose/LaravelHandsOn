@@ -45,7 +45,9 @@
             <tbody>
             @foreach($cars as $car)
                 <tr>
-                    <th scope="row">{{ $car->id }}</th>
+                    <td>
+                        {{ link_to_route('cars.show', $car->id, ['car' => $car->id]) }}
+                    </td>
                     <td>{{ $car->name }}</td>
                     <td>{{ $car->cc }}</td>
                     <td>{{ $car->company_id }}</td>
