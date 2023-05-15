@@ -2,7 +2,6 @@
 
 @section('main')
     <main class="container">
-        <img src="{{ asset('storage/img.png') }}">
         @if (!empty($errors->all()))
             <div class="mt-2 alert alert-danger">
                 @foreach ($errors->all() as $error)
