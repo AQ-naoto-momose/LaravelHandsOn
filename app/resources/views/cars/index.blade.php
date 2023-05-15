@@ -41,38 +41,21 @@
                 <th scope="col">削除</th>
             </tr>
             </thead>
+            {{-- ここから下が変更箇所 --}}
             <tbody>
-            <tr>
-                <th scope="row">
-                    1
-                </th>
-                <td>ルークス</td>
-                <td>659cc</td>
-                <td>2020年2月25日</td>
-                <td>「編集ボタン」</td>
-                <td>「削除ボタン」</td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    2
-                </th>
-                <td>セルシオ XF30</td>
-                <td>4300cc</td>
-                <td>2000年8月31日</td>
-                <td>「編集ボタン」</td>
-                <td>「削除ボタン」</td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    3
-                </th>
-                <td>ハイエース</td>
-                <td>2982cc</td>
-                <td>2022年4月13日</td>
-                <td>「編集ボタン」</td>
-                <td>「削除ボタン」</td>
-            </tr>
+            @foreach($cars as $car)
+                <tr>
+                    <th scope="row">{{ $car->id }}</th>
+                    <td>{{ $car->name }}</td>
+                    <td>{{ $car->cc }}</td>
+                    <td>{{ $car->company_id }}</td>
+                    <td>{{ $car->sale_date }}</td>
+                    <td>操作</td>
+                    <td>削除</td>
+                </tr>
+            @endforeach
             </tbody>
+            {{-- ここまで --}}
         </table>
     </main>
 @endsection

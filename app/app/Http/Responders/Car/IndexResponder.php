@@ -16,6 +16,6 @@ class IndexResponder
 
     public function handle(Payload $payload): Response
     {
-        return $this->responseFactory->view('cars.index');
+        return $this->responseFactory->view('cars.index', $payload->getOutput());
     }
 }
