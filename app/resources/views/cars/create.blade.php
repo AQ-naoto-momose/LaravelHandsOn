@@ -13,6 +13,7 @@
     <h2 class="p-2">車登録</h2>
 
     {{ Form::open([
+        'route'=> 'cars.store',
         'method' => 'post',
         'files' => true
     ]) }}

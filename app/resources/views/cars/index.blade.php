@@ -25,8 +25,8 @@
         {{-- TODO 検索ブロック --}}
 
 
-        <div class="d-grid col-2 ms-auto">
-            {{-- TODO 新規登録ボタン --}}
+        <div class="d-grid col-2 ms-auto pt-2">
+            {{ link_to_route('cars.create', '新規作成', null, ['class' => 'btn btn-primary']) }}
         </div>
 
         <h2 class="p-2">一覧</h2>
@@ -41,7 +41,7 @@
                 <th scope="col">削除</th>
             </tr>
             </thead>
-            {{-- ここから下が変更箇所 --}}
+
             <tbody>
             @foreach($cars as $car)
                 <tr>
@@ -57,7 +57,6 @@
                 </tr>
             @endforeach
             </tbody>
-            {{-- ここまで --}}
         </table>
     </main>
 @endsection
