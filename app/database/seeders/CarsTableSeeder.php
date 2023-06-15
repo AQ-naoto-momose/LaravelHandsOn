@@ -13,13 +13,15 @@ class CarsTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('cars')->insert([
-            'name' => '車1',
-            'company_id' => null,
-            'cc' => 100,
-            'sale_date' => now(),
-            'memo' => null,
-            'image_url' => 'https://2.bp.blogspot.com/-VGwRa8Gl4KE/WI1zIodXK8I/AAAAAAABBWo/QJudGelKFzcPMTuQvFnLUC-SIYvyc9dtQCLcB/s800/car_side.png',
-        ]);
+        for ($i = 0; $i < 100; $i++) {
+            \DB::table('cars')->insert([
+                'name' => '車1',
+                'company_id' => null,
+                'cc' => 100 + ($i % 10),
+                'sale_date' => now(),
+                'memo' => null,
+                'image_url' => 'https://2.bp.blogspot.com/-VGwRa8Gl4KE/WI1zIodXK8I/AAAAAAABBWo/QJudGelKFzcPMTuQvFnLUC-SIYvyc9dtQCLcB/s800/car_side.png',
+            ]);
+        }
     }
 }
