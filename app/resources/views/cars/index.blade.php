@@ -77,7 +77,7 @@
                     <td>
                         {{ Form::open([
                                     'route' => ['cars.delete', ['car' => $car->id]],
-                                    'method' => 'post'])
+                                    'method' => 'delete'])
                                  }}
                         {{ Form::submit('削除', ['class' => 'btn btn-danger']) }}
                         {{ Form::close() }}
