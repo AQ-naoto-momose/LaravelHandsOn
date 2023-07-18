@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                        <div>
+                            {{ link_to_route('cars.index', '→ Car List') }}
+                        </div>
                 </div>
             </div>
         </div>

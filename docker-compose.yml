@@ -1,19 +1,19 @@
-version: '3'
+version: '3.8'
 
 services:
 
-  # Host===================================================================
+  # Host======================================================================
   nginx:
-    image: nginx:1.12
+    image: nginx:1.20.2
     container_name: nginx
     ports:
-      - 80:80
+      - "80:80"
     volumes:
       - ./app/:/var/www/html/
       - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
       - ./docker/nginx/log:/var/log/nginx/
 
-  # App===================================================================
+  # App=======================================================================
   app:
     container_name: app
     build: docker/app
@@ -21,7 +21,7 @@ services:
       - ./app/:/var/www/html/
       - ./docker/app/conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini
 
-  # NPM===================================================================
+  # NPM=======================================================================
   node:
     image: node:lts
     container_name: node
@@ -32,7 +32,7 @@ services:
     entrypoint: [ "npm" ]
     command: [ "--help" ]
 
-  # Database===================================================================
+  # Database==================================================================
   db:
     image: mysql:8.0
     container_name: db
@@ -44,7 +44,7 @@ services:
     volumes:
       - laravel-db:/var/lib/mysql
     ports:
-      - 3306:3306
+      - "3306:3306"
 
 volumes:
   laravel-db:
