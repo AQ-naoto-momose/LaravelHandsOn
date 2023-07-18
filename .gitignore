@@ -2,3 +2,4 @@ docker/nginx/log
 
 .phpunit.result.cache
 
+/.idea
