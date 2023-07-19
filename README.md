@@ -22,7 +22,7 @@ make install
 ```
 
 3. ブラウザを確認する  
-   home：http://localhost:80/
+   home：http://localhost:80/  
    Car List：http://localhost:80/cars
 
 ### 2回目以降

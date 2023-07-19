@@ -46,6 +46,16 @@ services:
     ports:
       - "3306:3306"
 
+  puppeteer-node:
+    build:
+      context: ./
+      dockerfile: ./docker/puppeteer-node/Dockerfile
+    container_name: puppeteer-node
+    volumes:
+      - ./preview:/var/www/html/
+    working_dir: /var/www/html/
+    tty: true
+
 volumes:
   laravel-db:
     driver: local

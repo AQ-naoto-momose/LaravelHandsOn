@@ -1,6 +1,7 @@
 install:
 	cp app/.env.example app/.env
 	docker-compose run --rm node install
+	#docker-compose run --rm puppeteer-node install
 	docker-compose up --build -d
 	docker-compose run --rm node run build
 	docker-compose exec app composer install
