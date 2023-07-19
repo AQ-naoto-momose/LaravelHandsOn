@@ -4,7 +4,7 @@ services:
 
   # Host======================================================================
   nginx:
-    image: nginx:1.20.2
+    image: nginx:1.25.1
     container_name: nginx
     ports:
       - "80:80"
@@ -23,14 +23,14 @@ services:
 
   # NPM=======================================================================
   node:
-    image: node:lts
+    image: node:18.16.1
     container_name: node
     volumes:
       - ./app/:/var/www/html/
 #      - node:/var/www/html/node_modules ここもwindows特有のエラー対策
     working_dir: /var/www/html/
     entrypoint: [ "npm" ]
-    command: [ "--help" ]
+#    command: [ "run", "dev" ] // コンテナログイン & バージョン確認用
 
   # Database==================================================================
   db:

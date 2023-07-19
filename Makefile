@@ -19,6 +19,9 @@ up-bld:
 down:
 	docker-compose down
 
+reboot:
+	docker-compose down && docker-compose up -d --build
+
 node-bld:
 	docker-compose run --rm node run build
 

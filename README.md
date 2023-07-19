@@ -1,12 +1,13 @@
 # ECS + Fargate + CI/CD
 
 ## ローカル環境構成
-- Nginx 1.20.2
+- Nginx 1.25.1
 - MySQL 8.0
-- Composer latest(固定バージョンに修正予定)
-- PHP 8.1
+- Composer 2.5.8
+- PHP 8.2
 - Laravel 10.8
-- Node TLS(固定バージョンに修正予定)
+- Node 18.16.1
+- npm 9.5.1
 
 ## ローカル環境構築手順
 ### 初回時

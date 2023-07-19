@@ -1,4 +1,4 @@
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
-RUN composer self-update
+RUN composer self-update 2.5.8
 
 COPY conf.d/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 WORKDIR /var/www/html
