@@ -36,3 +36,9 @@ dump-autoload:
 	docker-compose run --rm app php artisan clear-compiled
 	docker-compose run --rm app php artisan optimize
 	docker-compose run --rm app php artisan config:cache
+
+test-w/err:
+	docker-compose exec app ./vendor/bin/phpunit
+
+test-a:
+	docker-compose exec app php artisan test
