@@ -38,7 +38,7 @@ RUN chmod -R 777 storage
 RUN composer install
 
 RUN npm install
-#RUN npm run build
-RUN npm run production
+RUN npm run build
+#RUN npm run production
 
 CMD ["php-fpm", "--allow-to-run-as-root"]
