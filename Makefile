@@ -1,4 +1,4 @@
-install:
+install-local:
 	cp app/.env.example app/.env
 	docker-compose run --rm node install
 	#docker-compose run --rm puppeteer-node install
@@ -10,6 +10,14 @@ install:
 	docker-compose exec app php artisan ide-helper:generate
 	docker-compose exec app php artisan ide-helper:meta
 	docker-compose exec app php artisan ide-helper:models -n
+
+install:
+	cp app/.env.example app/.env
+	docker-compose run --rm node install
+	docker-compose up --build -d
+	docker-compose run --rm node run build
+	docker-compose exec app composer install
+	docker-compose exec app php artisan key:generate
 
 up:
 	docker-compose up -d
