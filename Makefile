@@ -18,6 +18,7 @@ install:
 	docker-compose run --rm node run build
 	docker-compose exec app composer install
 	docker-compose exec app php artisan key:generate
+	sudo chmod -R 777 app/storage
 
 up:
 	docker-compose up -d
