@@ -6,6 +6,7 @@ services:
   nginx:
     image: nginx:1.25.1
     container_name: nginx
+    working_dir: /var/www/html/
     ports:
       - "8080:80"
     volumes:
