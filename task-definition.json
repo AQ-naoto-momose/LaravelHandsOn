@@ -1,0 +1,14 @@
+{
+  "family": "ecs-fargate-cicd-task-def",
+  "taskRoleArn": "arn:aws:iam::364021107285:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::364021107285:role/ecsTaskExecutionRole",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "2048",
+  "memory": "4096",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  }
+}
